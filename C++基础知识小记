@@ -1,0 +1,5 @@
+1.二分法源码
+2.递归和循环小结
+3.emplace_front,emplace 和 emplace_back
+分别对应push_front,insert 和 push_back,区别在于emplace 操作是直接构造，而push操作是指，我们先将元素类型的对象传递给他们，然后再拷贝.
+4 vector对象是如何增长的    ：：  vector和string的实现通常会分配比新空间需求更大的内存空间，容器预留这些空间作为预备使用，这样就不用每次添加新元素都重新分配内存了，我在自己的电脑上面试了下，发现capacity是以原容量的1.5倍增长的。
