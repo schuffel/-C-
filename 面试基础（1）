@@ -1,0 +1,22 @@
+new与delete, malloc 与 free
+----------------
+new的用法：
+---
+int *ptr = new int(1);//表示动态分配一个int，初始化为1
+int *ptr = new int[1];//表示动态分配一个int数组，数组大小为1；
+1.C++中通过new关键字进行动态内存申请
+2.C++中的动态内存是基于类型进行的
+3.delete关键字用于内存释放。
+Type* pointer = new Type;
+//...
+delete pointer;
+
+malloc与free的用法
+
+
+
+
+两者之间的区别：
+new关键字是C++的一部分	malloc是由C库提供的函数
+new以具体类型为单位进行内存分配	malloc以字节为单位进行内存分配
+new在申请单个类型变量时可进行初始化	malloc不具备内存初始化的特性
