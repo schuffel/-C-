@@ -11,9 +11,15 @@ Type* pointer = new Type;
 //...
 delete pointer;
 
+foo = new (nothrow) int [5];
+if (foo == nullptr) {
+  // error assigning memory. Take measures.
+}
+----
 malloc与free的用法
+----
 
-
+int *p = (int *) malloc ( sizeof(int) * length);
 
 
 两者之间的区别：
