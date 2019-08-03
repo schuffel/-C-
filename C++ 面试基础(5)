@@ -6,3 +6,27 @@ sizeof
   原因: 调用构造和析构函数只需要知道函数的地址即可,而函数类型只与类型相关,与实例无关,
 (3)如果把析构函数标记为虚函数呢 答案是 4
   原因: C++编译器如果发现一个类型中有虚函数, 就会为该类型生成虚函数表, 并且在每一个实例里面添加一个指向虚函数表的指针. 32位平台为4,64位平台为8.
+  
+  
+  
+类的构造和析构函数
+----------------
+构造函数     
+class A{
+private:
+  int value;
+public:
+  A(int n){value = n;}
+  A(const A & other){value = other.value;}    // 注意一定是指向常量的引用
+};
+
+
+-----
+strcpy(des, src) 把src里面的内容复制到des里面
+strcpy_s(des, strlen(des) + 1, src) // 第二个参数就是des的长度, 因为strlen()返回字符串长度，但是不包括字符串末尾的空字符，所以+1.
+
+char * strncpy（char * dest，const char * src，size_t count）;
+char * strncpy（char * restrict dest，const char * restrict src，size_t count）;
+errno_t strncpy_s（char * restrict dest，rsize_t destsz，const char * restrict src，rsize_t count）;
+
+建议直接使用最后面一个strncpy_s()函数,4个参数.
